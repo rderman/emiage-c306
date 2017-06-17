@@ -117,4 +117,29 @@ public class GrilleTest {
         }
         System.out.println("Value get >>> " + String.valueOf(resultat));
     }
+
+    @Before
+    public void setUp() {
+    }
+
+    @After
+    public void tearDown() {
+    }
+
+    // TODO add test methods here.
+    // The methods must be annotated with annotation @Test. For example:
+    //
+    // @Test
+    // public void hello() {}
+    /**
+     * Test of the complete methode of the class Grille.
+     */
+    public final void testComplete() {
+        System.err.println("complete");
+        Grille instance = new GrilleImpl(TEST_GRILLE);
+        boolean resultat = instance.complete();
+        assertEquals(false, resultat);
+        System.out.println("Complete Result FALSE");
+
+    }
 }
