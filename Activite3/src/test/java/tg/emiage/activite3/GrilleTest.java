@@ -99,4 +99,15 @@ public class GrilleTest {
     //
     // @Test
     // public void hello() {}
+    /**
+     * Test of the complete methode of the class Grille.
+     */
+    public final void testComplete() {
+        System.err.println("complete");
+        Grille instance = new GrilleImpl(TEST_GRILLE);
+        boolean resultat = instance.complete();
+        assertEquals(false, resultat);
+        System.out.println("Complete Result FALSE");
+
+    }
 }
