@@ -94,14 +94,11 @@ public class GrilleTest {
     public void tearDown() {
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    
     /**
      * Test of the complete methode of the class Grille.
      */
+    @Test
     public final void testComplete() {
         System.err.println("complete");
         Grille instance = new GrilleImpl(TEST_GRILLE);
@@ -109,5 +106,29 @@ public class GrilleTest {
         assertEquals(false, resultat);
         System.out.println("Complete Result FALSE");
 
+    }
+    
+    /**
+     * Test of the possible methode of the class Grille.
+     */
+    @Test
+    public final void testPossible(){
+        System.out.println("possible");
+        Grille instance = new GrilleImpl(TEST_GRILLE);
+        boolean resulat = instance.possible(POSSBL_X, POSSBL_Y, POSSBL_VALUE);
+        assertEquals(true, resulat);
+        System.out.println("Possible status TRUE");
+        
+    }
+    
+    /**
+     * Main Method.
+     * @param args arguments
+     */
+    public static void main(String[] args) {
+        GrilleTest test = new GrilleTest();
+        
+        test.testComplete();
+        test.testPossible();
     }
 }
