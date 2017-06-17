@@ -160,6 +160,9 @@ public class GrilleTest {
     public static void main(String[] args) {
         GrilleTest test = new GrilleTest();
         
+        test.testGetDimension();
+        test.testGetValue();
+        test.testSetValue();
         test.testComplete();
         test.testPossible();
     }
