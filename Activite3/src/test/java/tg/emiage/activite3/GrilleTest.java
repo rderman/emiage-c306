@@ -75,28 +75,46 @@ public class GrilleTest {
                 {VIDE, VIDE, VIDE, VIDE, '4', VIDE, VIDE, VIDE, '9'}
             };
 
+    /**
+     * Constructeur par défaut.
+     */
     public GrilleTest() {
     }
 
-    @BeforeClass
-    public static void setUpClass() {
+    /**
+     * Test of getDimension method, of class Grille.
+     */
+    @Test
+    public final void testGetDimension() {
+        System.out.println("getDimension");
+        Grille instance = new GrilleImpl(TEST_GRILLE);
+        int resultat = instance.getDimension();
+        assertEquals(DIMENSION_EXP_RESULT, resultat);
+        System.out.println("Grille Dimension >>> " + resultat);
+    }
+    
+    /**
+     * Test of setValue method, of class Grille.
+     */
+    @Test
+    public final void testSetValue() {
+        System.out.println("setValue");
+        Grille instance = new GrilleImpl(TEST_GRILLE);
+        instance.setValue(GRILLE_SET_V_X, GRILLE_SET_V_Y, GRILLE_XY_SET);
+        System.out.println("Value set");
     }
 
-    @AfterClass
-    public static void tearDownClass() {
+    /**
+     * Test of getValue method, of class Grille.
+     */
+    @Test
+    public final void testGetValue() {
+        System.out.println("getValue");
+        Grille instance = new GrilleImpl(TEST_GRILLE);
+        char resultat = instance.getValue(GET_V_X, GET_V_Y);
+        if (resultat != '7') {
+            fail("testGetValue: Valeurs différentes");
+        }
+        System.out.println("Value get >>> " + String.valueOf(resultat));
     }
-
-    @Before
-    public void setUp() {
-    }
-
-    @After
-    public void tearDown() {
-    }
-
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
 }
