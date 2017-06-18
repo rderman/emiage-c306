@@ -90,7 +90,7 @@ public class GrilleTest {
         Grille instance = new GrilleImpl(TEST_GRILLE);
         int resultat = instance.getDimension();
         assertEquals(DIMENSION_EXP_RESULT, resultat);
-        System.out.println("Grille Dimension >>> " + resultat);
+        System.out.println("Dimension de la Grille = " + resultat);
     }
     
     /**
@@ -101,7 +101,7 @@ public class GrilleTest {
         System.out.println("setValue");
         Grille instance = new GrilleImpl(TEST_GRILLE);
         instance.setValue(GRILLE_SET_V_X, GRILLE_SET_V_Y, GRILLE_XY_SET);
-        System.out.println("Value set");
+        System.out.println("Execution de méthode setValue");
     }
 
     /**
@@ -113,17 +113,9 @@ public class GrilleTest {
         Grille instance = new GrilleImpl(TEST_GRILLE);
         char resultat = instance.getValue(GET_V_X, GET_V_Y);
         if (resultat != '7') {
-            fail("testGetValue: Valeurs différentes");
+            fail("cas getValue Valeurs différentes");
         }
-        System.out.println("Value get >>> " + String.valueOf(resultat));
-    }
-
-    @Before
-    public void setUp() {
-    }
-
-    @After
-    public void tearDown() {
+        System.out.println("Résultat ok pour exécution de getValue " + String.valueOf(resultat));
     }
 
     
@@ -136,7 +128,7 @@ public class GrilleTest {
         Grille instance = new GrilleImpl(TEST_GRILLE);
         boolean resultat = instance.complete();
         assertEquals(false, resultat);
-        System.out.println("Complete Result FALSE");
+        System.out.println("Exécution de la méthode complete pour Result FALSE");
 
     }
     
@@ -149,7 +141,7 @@ public class GrilleTest {
         Grille instance = new GrilleImpl(TEST_GRILLE);
         boolean resulat = instance.possible(POSSBL_X, POSSBL_Y, POSSBL_VALUE);
         assertEquals(true, resulat);
-        System.out.println("Possible status TRUE");
+        System.out.println("Exécution de la méthode possible pour status TRUE");
         
     }
     
@@ -161,9 +153,11 @@ public class GrilleTest {
         GrilleTest test = new GrilleTest();
         
         test.testGetDimension();
-        test.testGetValue();
         test.testSetValue();
         test.testComplete();
         test.testPossible();
+        //Merci de décommenter la ligne ci-dessous pour le test avec
+        //exceptionµ
+//        test.testGetValue();
     }
 }
